@@ -10,8 +10,10 @@ app.post('/fetch', async (req, res)=>{
   const {searchURL, method} = req.body;
   try{
     const data = await axios[method](searchURL);
+    console.log(data)
     res.json(data);
   }catch(err){
+      console.log(err)
     res.json(err);
   }
 })
